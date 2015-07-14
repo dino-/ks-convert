@@ -14,7 +14,7 @@ description:         Bar Baz
 category:            Unknown
 tested-with:         GHC >= 7.10.1
 extra-source-files:  changelog.md
-                     doc/dev/notes
+                     doc/dev/notes.md
                      README.md
                      TODO.md
                      util/gentags.sh
@@ -30,17 +30,12 @@ executable           ks-convert
                      KS.Legacy.Inspection
                      KS.Legacy.Place
    build-depends:      aeson
-                     --, aeson-pretty
-                     --, attoparsec
                      , base >= 3 && < 5
                      , bytestring
-                     --, containers
                      , directory
                      , filepath
                      , geojson
                      , ks-library >= 1.1
-                     --, mtl
                      , text
                      , time
-                     --, utf8-string
    ghc-options:      -Wall
