@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-Legacy Couchbase data conversion utility for KitchenSnitch
+Legacy Couchbase data conversion utility for KitchenSnitch (Haskell)
 
 
 ## Description
