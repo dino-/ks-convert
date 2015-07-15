@@ -46,7 +46,7 @@ main = do
 
 handleLoadSuccess :: TimeZone -> FilePath -> LD.Document -> IO ()
 handleLoadSuccess tz destDir legacyDoc =
-   putStrLn =<< (saveDoc destDir $ convert tz legacyDoc)
+   putStrLn =<< (saveDocument destDir $ convert tz legacyDoc)
 
 
 convert :: TimeZone -> LD.Document -> Document
