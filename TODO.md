@@ -1,2 +1,0 @@
-- Need to make another conversion tool and convert everything again
-   - This is because of the inspection date localization issue
