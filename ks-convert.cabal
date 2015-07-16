@@ -23,8 +23,8 @@ source-repository    head
    type:             darcs
    location:         http://hub.darcs.net/dino/ks-convert
 
-executable           ks-convert
-   main-is:          ks-convert.hs
+executable           ks-doc-cnv
+   main-is:          ks-doc-cnv.hs
    hs-source-dirs:   src
    other-modules:    KS.Legacy.Document
                      KS.Legacy.Inspection
@@ -35,6 +35,20 @@ executable           ks-convert
                      , directory
                      , filepath
                      , geojson
+                     , ks-library >= 1.1
+                     , text
+                     , time
+   ghc-options:      -Wall
+
+executable           ks-insp-cnv
+   main-is:          ks-insp-cnv.hs
+   hs-source-dirs:   src
+   other-modules:    KS.Legacy.Inspection
+   build-depends:      aeson
+                     , base >= 3 && < 5
+                     , bytestring
+                     , directory
+                     , filepath
                      , ks-library >= 1.1
                      , text
                      , time

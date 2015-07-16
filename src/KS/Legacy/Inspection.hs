@@ -4,13 +4,26 @@
 {-# LANGUAGE DeriveGeneric #-}
 
 module KS.Legacy.Inspection
-   ( Inspection (..)
+   ( IdInspection (..)
+   , Inspection (..)
+   , loadInspection
    )
    where
 
-import Data.Aeson ( FromJSON, ToJSON )
+import Data.Aeson ( FromJSON, ToJSON, eitherDecodeStrict' )
+import qualified Data.ByteString as BS
 import Data.Text
 import GHC.Generics ( Generic )
+
+
+data IdInspection = IdInspection
+   { _id :: String
+   , inspection :: Inspection
+   }
+   deriving (Generic, Show)
+
+instance FromJSON IdInspection
+instance ToJSON IdInspection
 
 
 data Inspection = Inspection
@@ -28,3 +41,11 @@ data Inspection = Inspection
 
 instance FromJSON Inspection
 instance ToJSON Inspection
+
+
+loadInspection :: FilePath -> IO IdInspection
+loadInspection path = do
+   bytes <- BS.readFile path
+   case eitherDecodeStrict' bytes of
+      Left msg -> ioError $ userError msg
+      Right insp -> return insp
