@@ -1,55 +1,62 @@
-name:                ks-convert
-version:             1.1
-cabal-version:       >= 1.8
-build-type:          Custom
-license:             BSD3
-license-file:        LICENSE
-copyright:           2015 Dino Morelli
-author:              Dino Morelli
-maintainer:          Dino Morelli <dino@ui3.info>
-stability:           experimental
-homepage:            http://hub.darcs.net/dino/ks-convert
-synopsis:            Conversion utility for KitchenSnitch documents
-description:         Bar Baz
-category:            Unknown
-tested-with:         GHC >= 7.10.1
-extra-source-files:  changelog.md
-                     doc/dev/notes.md
-                     README.md
-                     TODO.md
-                     util/gentags.sh
+name: ks-convert
+version: 1.1
+cabal-version: >=1.8
+build-type: Custom
+license: BSD3
+license-file: LICENSE
+copyright: 2015 Dino Morelli
+maintainer: Dino Morelli <dino@ui3.info>
+stability: experimental
+homepage: http://hub.darcs.net/dino/ks-convert
+synopsis: Conversion utility for KitchenSnitch documents
+description:
+    Bar Baz
+category: Unknown
+author: Dino Morelli
+tested-with: GHC >=7.10.1
+extra-source-files:
+    changelog.md
+    doc/dev/notes.md
+    README.md
+    TODO.md
+    util/gentags.sh
 
-source-repository    head
-   type:             darcs
-   location:         http://hub.darcs.net/dino/ks-convert
+source-repository head
+    type: darcs
+    location: http://hub.darcs.net/dino/ks-convert
 
-executable           ks-doc-cnv
-   main-is:          ks-doc-cnv.hs
-   hs-source-dirs:   src
-   other-modules:    KS.Legacy.Document
-                     KS.Legacy.Inspection
-                     KS.Legacy.Place
-   build-depends:      aeson
-                     , base >= 3 && < 5
-                     , bytestring
-                     , directory
-                     , filepath
-                     , geojson
-                     , ks-library >= 1.1
-                     , text
-                     , time
-   ghc-options:      -Wall
+executable ks-doc-cnv
+    main-is: ks-doc-cnv.hs
+    build-depends:
+        aeson ==0.9.*,
+        base >=3 && <5,
+        bytestring >=0.10.6.0 && <0.11,
+        directory >=1.2.2.0 && <1.3,
+        filepath >=1.4.0.0 && <1.5,
+        geojson >=0.0.2 && <0.1,
+        ks-library >=1.5,
+        text >=1.2.1.3 && <1.3,
+        time >=1.5.0.1 && <1.6
+    hs-source-dirs: src
+    other-modules:
+        KS.Legacy.Document
+        KS.Legacy.Inspection
+        KS.Legacy.Place
+    ghc-options: -Wall
 
-executable           ks-insp-cnv
-   main-is:          ks-insp-cnv.hs
-   hs-source-dirs:   src
-   other-modules:    KS.Legacy.Inspection
-   build-depends:      aeson
-                     , base >= 3 && < 5
-                     , bytestring
-                     , directory
-                     , filepath
-                     , ks-library >= 1.1
-                     , text
-                     , time
-   ghc-options:      -Wall
+executable ks-insp-cnv
+    main-is: ks-insp-cnv.hs
+    build-depends:
+        aeson ==0.9.*,
+        base >=3 && <5,
+        bytestring >=0.10.6.0 && <0.11,
+        directory >=1.2.2.0 && <1.3,
+        filepath >=1.4.0.0 && <1.5,
+        ks-library >=1.5,
+        text >=1.2.1.3 && <1.3,
+        time >=1.5.0.1 && <1.6
+    hs-source-dirs: src
+    other-modules:
+        KS.Legacy.Inspection
+    ghc-options: -Wall
+
