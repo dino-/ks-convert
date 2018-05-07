@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-Legacy Couchbase data conversion utility for KitchenSnitch (Haskell)
+Legacy data conversion utility for KitchenSnitch (Haskell)
 
 
 ## Description
@@ -36,7 +36,7 @@ On Arch Linux:
 
 Get the `ks-convert` source code
 
-    $ darcs get http://hub.darcs.net/dino/ks-convert
+    $ git clone https://github.com/dino-/ks-convert.git
 
 Update your cabal library and tools, we need a modern version
 

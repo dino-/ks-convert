@@ -2,9 +2,9 @@ name: ks-convert
 version: 1.1
 cabal-version: >=1.8
 build-type: Custom
-license: BSD3
+license: ISC
 license-file: LICENSE
-copyright: 2015 Dino Morelli
+copyright: 2015-2018 Dino Morelli
 maintainer: Dino Morelli <dino@ui3.info>
 stability: experimental
 homepage: http://hub.darcs.net/dino/ks-convert
@@ -22,8 +22,8 @@ extra-source-files:
     util/gentags.sh
 
 source-repository head
-    type: darcs
-    location: http://hub.darcs.net/dino/ks-convert
+    type: git
+    location: https://github.com/dino-/ks-convert.git
 
 executable ks-doc-cnv
     main-is: ks-doc-cnv.hs
